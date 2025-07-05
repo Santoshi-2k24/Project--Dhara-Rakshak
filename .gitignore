@@ -1,0 +1,39 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+local_settings.py
+
+# VS Code settings
+.vscode/
+
+# Static files (optional if you collectstatic)
+staticfiles/
+static/
+
+# Media uploads (optional, if you use MEDIA_ROOT)
+media/
+
+# macOS and Windows trash
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.sublime-workspace
+*.sublime-project
+
+# Environment variable files
+.env
