@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Officer Login</title>
+  <link rel="stylesheet" href="{% static 'css/officer_login.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h1>Officer Login</h1>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      
+      <a href="{% url 'officer_dashboard' %}" class="login-btn">Login</a>
+    </div>
+
+    <div class="back-link">
+      <a href="{% url 'index' %}">← Go Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
+

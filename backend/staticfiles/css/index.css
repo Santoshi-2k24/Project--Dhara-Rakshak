@@ -1,0 +1,149 @@
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  animation: fadeInBody 1s ease-in;
+}
+
+
+h1 {
+  text-align: center;
+  color: #004085;
+  margin-bottom: 10px;
+  animation: slideDown 1s ease;
+}
+
+
+nav {
+  text-align: center;
+  background-color: #004085;
+  padding: 12px 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  animation: fadeInNav 1.2s ease;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #07d0f4;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+  animation: slideUp 1s ease;
+}
+
+
+p {
+  max-width: 90%;
+  width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+  
+  font-size: 16px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  animation: fadeInContent 1.5s ease;
+}
+
+p a {
+  color: #004085;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInNav {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInContent {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.emergency-contacts {
+  margin-bottom: 5px;
+}
+
+.social-icons a img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 5px;
+  color: #666;
+}

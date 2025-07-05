@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/search_dashboard.css' %}">
+</head>
+<body>
+  <h1>Search by District, Mandal & Survey Number</h1>
+  
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label>Enter District:</label>
+    <input type="text" name="district" required><br><br>
+    
+    <label>Enter Mandal:</label>
+    <input type="text" name="mandal" required><br><br>
+    
+    <label>Enter Survey Number:</label>
+    <input type="text" name="survey_number" pattern="[0-9]+-[A-Za-z]+-[0-9]+" required><br><br>
+
+    <label>Upload Current Photo (For Verification):</label>
+    <input type="file" name="current_photo" accept="image/*" required><br><br>
+    
+    <input type="submit" value="Search & Verify">
+  </form>
+
+  <br><br>
+  <h3>Search Results:</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Full Name</th>
+      <th>Aadhar</th>
+      <th>District</th>
+      <th>Mandal</th>
+      <th>Survey Number</th>
+      <th>Document Number</th>
+      <th>Photo</th>
+      <th>Verification Status</th>
+    </tr>
+    <tr>
+      <td>Example Name</td>
+      <td>123412341234</td>
+      <td>Vizag</td>
+      <td>MVP</td>
+      <td>78/4</td>
+      <td>DOC78456</td>
+      <td><img src="images/sample_photo.jpg" width="80" alt="Photo"></td>
+      <td style="color: green;">✔ Match</td>
+    </tr>
+    <!-- Dynamic rows populated after search -->
+  </table>
+
+  <br>
+  <a href="{% url 'index' %}">← Back to Home</a>
+</body>
+</html>
+

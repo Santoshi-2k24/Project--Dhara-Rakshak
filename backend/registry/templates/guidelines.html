@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Land Registration Guidelines</title>
+  <link rel="stylesheet" href="{% static 'css/guidelines.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>📘 Land Registration Guidelines</h1>
+
+    <section>
+      <h2>1. Government Orders (GOs)</h2>
+      <p>
+        All land transactions must comply with the latest government orders (GOs) released by the Revenue and Registration departments.
+        Ensure the survey number and property boundaries are verified and not under legal dispute or public acquisition.
+      </p>
+      <ul>
+        <li>GO 121: E-Registration Mandate (2022)</li>
+        <li>GO 98: Encumbrance Certificate Mandatory</li>
+        <li>GO 33: Digital Survey Maps Legal Validity</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Land Registration Rules</h2>
+      <p>
+        Land registration must follow the Transfer of Property Act, 1882 and the Indian Registration Act, 1908. The buyer and seller must be physically present or represented legally.
+      </p>
+      <ul>
+        <li>Seller must submit Aadhaar and property documents</li>
+        <li>Encumbrance certificate must be verified (past 13 years)</li>
+        <li>Stamp duty and registration charges apply as per slab</li>
+        <li>Fingerprint and photo verification mandatory</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Required Documents</h2>
+      <p>Make sure the following are ready before proceeding:</p>
+      <ol>
+        <li>Latest Property Tax Receipt</li>
+        <li>Original Sale Deed or Gift Deed</li>
+        <li>Encumbrance Certificate (Form 15/16)</li>
+        <li>Survey and Location Map</li>
+        <li>Buyer & Seller ID proofs (Aadhaar, PAN)</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>4. Digital Registration Process</h2>
+      <p>
+        Through the official portal, land registration is now digitized with officer login, document upload, biometric verification and real-time validation against fraudulent claims.
+      </p>
+      <ul>
+        <li>Officer logs in to verify documents</li>
+        <li>Data entered into secure land registry system</li>
+        <li>ML system flags possible duplicates</li>
+        <li>Receipt and certificate digitally signed</li>
+      </ul>
+    </section>
+
+    <div class="back-link">
+      <a href="{% url 'index' %}">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  margin: 0;
+  animation: fadeIn 1s ease;
+}
+
+
+h1 {
+  text-align: center;
+  color: #004085;
+  margin-bottom: 30px;
+  animation: fadeIn 1.2s ease;
+}
+
+
+form {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  animation: fadeIn 1.4s ease;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #004085;
+  outline: none;
+}
+
+/* Submit button */
+input[type="submit"] {
+  background-color: #004085;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #004085;
+  transform: scale(1.05);
+}
+
+h3 {
+  text-align: center;
+  color: #004085;
+  margin-top: 40px;
+  animation: fadeIn 1.6s ease;
+}
+
+
+table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  animation: fadeIn 1.8s ease;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #e9f0fb;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #eef6ff;
+  transition: background-color 0.3s ease;
+}
+
+
+table img {
+  border-radius: 4px;
+}
+
+a {
+  display: block;
+  text-align: center;
+  color: #004085;
+  text-decoration: none;
+  margin-top: 20px;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #004085;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

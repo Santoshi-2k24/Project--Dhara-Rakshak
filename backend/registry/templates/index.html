@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Government of India Land Registration</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <h1>Government of India Land Registration Portal</h1>
+
+  <nav>
+    <a href="{% url 'index' %}">Home</a> |
+    <a href="{% url 'guidelines' %}" target="_blank">Land Registration</a> |
+    <a href="{% url 'officer_login' %}">Officer Login</a>
+  </nav>
+
+  <hr>
+
+  <h2 id="h2">Welcome to the official portal for Land Registrations</h2>
+
+  <p>
+    The Land Registration Verification Portal is a secure digital platform designed to prevent fraudulent property transfers. It streamlines the registration process by integrating biometric and image-based identity checks. Each record includes land survey details, ownership information, and official document identifiers. Sub-registrars can validate transactions by comparing live photos with pre-verified facial data. Optional fingerprint uploads add a second layer of trust for sensitive cases. All data entry happens under supervised conditions at designated registration offices. The system ensures that ownership transfers can only occur with authentic human presence. This addresses the rising threat of fabricated Aadhar cards in land dealings. Backed by robust AI-powered verification and real-time access to a secure registry. Our platform bridges governance, transparency, and citizen trust—one verified deed at a time.
+  </p>
+
+  <footer>
+    <div class="footer-content">
+      <div class="emergency-contacts">
+        <strong>Emergency Contacts:</strong><br>
+        Police: 100 | Fire: 101 | Ambulance: 108 | Blood Bank: 040-24745243
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Government of India. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
