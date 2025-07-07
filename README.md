@@ -18,6 +18,7 @@ Dhara-Rakshak is a land registration and verification system to prevent fake lan
 ```bash
 git clone https://github.com/Santoshi-2k24/Project--Dhara-Rakshak.git
 cd Project--Dhara-Rakshak
+cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
