@@ -15,6 +15,7 @@ Dhara-Rakshak is a land registration and verification system to prevent fake lan
 - JavaScript (for frontend enhancements)
 
 ## How to Run
+Install django and pillow before !
 ```bash
 git clone https://github.com/Santoshi-2k24/Project--Dhara-Rakshak.git
 cd Project--Dhara-Rakshak
