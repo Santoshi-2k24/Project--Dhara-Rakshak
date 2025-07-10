@@ -5,20 +5,54 @@
   <meta charset="UTF-8">
   <title>Officer Login</title>
   <link rel="stylesheet" href="{% static 'css/officer_login.css' %}">
+  <script>
+    async function loginOfficer(event) {
+      event.preventDefault();
+
+      const officerId = document.getElementById("officer_id").value;
+      const password = document.getElementById("password").value;
+
+      const response = await fetch("/login/officer_login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": getCookie("csrftoken")
+        },
+        body: JSON.stringify({ id: officerId, password: password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Login successful. Welcome " + data.officer);
+        window.location.href = "{% url 'upload_area' %}";
+      } else {
+        alert(data.error || "Login failed.");
+      }
+    }
+
+    function getCookie(name) {
+      const cookieValue = document.cookie
+        .split("; ")
+        .find(row => row.startsWith(name + "="));
+      return cookieValue ? cookieValue.split("=")[1] : null;
+    }
+  </script>
 </head>
 <body>
   <div class="container">
     <div class="login-box">
       <h1>Officer Login</h1>
 
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+      <form onsubmit="loginOfficer(event)">
+        <label for="officer_id">Officer ID:</label>
+        <input type="text" id="officer_id" name="officer_id" required>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-      
-      <a href="{% url 'officer_dashboard' %}" class="login-btn">Login</a>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
     </div>
 
     <div class="back-link">
@@ -27,4 +61,3 @@
   </div>
 </body>
 </html>
-

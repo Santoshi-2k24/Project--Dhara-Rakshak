@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Land Record</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="file"]:focus {
+            border-color: #3f8efc;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background: #3f8efc;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #367ae9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Upload Land Record</h2>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/off_post/upload/">
+            {% csrf_token %}
+            <label>Full Name</label>
+            <input type="text" name="full_name" required>
+
+            <label>Mandal</label>
+            <input type="text" name="mandal" required>
+
+            <label>District</label>
+            <input type="text" name="district" required>
+
+            <label>State</label>
+            <input type="text" name="state" required>
+
+            <label>Aadhar Number</label>
+            <input type="text" name="aadhar_number" required>
+
+            <label>Document Number</label>
+            <input type="text" name="document_number" required>
+
+            <label>Survey Number</label>
+            <input type="text" name="survey_number" required>
+
+            <label>Photo</label>
+            <input type="file" name="photo" accept="image/*" required>
+
+            <button type="submit">Submit Record</button>
+        </form>
+    </div>
+</body>
+</html>

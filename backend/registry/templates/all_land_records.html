@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Land Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        img {
+            max-height: 80px;
+            border-radius: 4px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Land Records</h2>
+    {% if records %}
+    <table>
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Full Name</th>
+                <th>Aadhar Number</th>
+                <th>Document Number</th>
+                <th>Survey Number</th>
+                <th>Mandal</th>
+                <th>District</th>
+                <th>State</th>
+                <th>Registered Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td><img src="{{ record.photo.url }}" alt="Photo"></td>
+                <td>{{ record.full_name }}</td>
+                <td>{{ record.aadhar_number }}</td>
+                <td>{{ record.document_number }}</td>
+                <td>{{ record.survey_number }}</td>
+                <td>{{ record.mandal }}</td>
+                <td>{{ record.district }}</td>
+                <td>{{ record.state }}</td>
+                <td>{{ record.registered_date|date:"Y-m-d H:i" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No records found.</p>
+    {% endif %}
+</body>
+</html>
