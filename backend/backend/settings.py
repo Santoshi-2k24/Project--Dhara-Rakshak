@@ -10,8 +10,7 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME, 'localhost'] if RENDER_EXTERNAL_HOSTNAME else ['*']
+ALLOWED_HOSTS = ['dhara-rakshak-backend.onrender.com', 'localhost']
 
 
 
