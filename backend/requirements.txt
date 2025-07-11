@@ -12,8 +12,6 @@ six
 sqlparse
 tzdata
 urllib3
-
-
 whitenoise
 dj-database-url
 psycopg2-binary
