@@ -1,23 +1,14 @@
 from pathlib import Path
 import dj_database_url
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import os
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-
-ENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-ALLOWED_HOSTS = [
-    RENDER_EXTERNAL_HOSTNAME,
-    'dhara-rakshak-backend.onrender.com',
-    'localhost',
-] if RENDER_EXTERNAL_HOSTNAME else ['dhara-rakshak-backend.onrender.com', 'localhost']
-
-
-
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME, 'localhost'] if RENDER_EXTERNAL_HOSTNAME else ['dhara-rakshak-backend.onrender.com', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,16 +52,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-#DATABASES = {
-#'default': {
-#'ENGINE': 'django.db.backends.sqlite3',
-#'NAME': BASE_DIR / 'backend' / 'db.sqlite3',
-#}
-#}
-
 DATABASES = {
     'default': dj_database_url.parse(
-        'postgresql://neondb_owner:npg_NGZ81zmXtSbk@ep-raspy-feather-a12909q5-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+        os.environ.get('DATABASE_URL')
     )
 }
 
@@ -82,11 +66,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 STATIC_URL = '/static/'
@@ -104,3 +85,4 @@ REST_FRAMEWORK = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
