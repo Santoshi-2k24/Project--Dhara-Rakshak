@@ -3,11 +3,18 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'your-secret-key'
+import os
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME, 'localhost'] if RENDER_EXTERNAL_HOSTNAME else ['*']
+
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
