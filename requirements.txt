@@ -14,3 +14,4 @@ tzdata==2025.2
 urllib3==2.5.0
 dj_database_url
 psycopg2-binary>=2.9
+gunicorn>=21.2.0
