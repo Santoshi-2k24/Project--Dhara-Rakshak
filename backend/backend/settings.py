@@ -9,8 +9,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 
-
-ALLOWED_HOSTS = ['dhara-rakshak-backend.onrender.com', 'localhost']
+ENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+ALLOWED_HOSTS = [
+    RENDER_EXTERNAL_HOSTNAME,
+    'dhara-rakshak-backend.onrender.com',
+    'localhost',
+] if RENDER_EXTERNAL_HOSTNAME else ['dhara-rakshak-backend.onrender.com', 'localhost']
 
 
 
