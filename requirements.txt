@@ -16,3 +16,4 @@ urllib3==2.5.0
 dj_database_url
 psycopg
 gunicorn
+whitenoise
