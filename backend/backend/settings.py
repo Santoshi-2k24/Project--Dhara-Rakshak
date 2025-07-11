@@ -1,4 +1,5 @@
 from pathlib import Path
+import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -83,11 +84,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
+#DATABASES = {
+#'default': {
+#'ENGINE': 'django.db.backends.sqlite3',
+#'NAME': BASE_DIR / 'backend' / 'db.sqlite3',
+#}
+#}
+
+
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.sqlite3',
-'NAME': BASE_DIR / 'backend' / 'db.sqlite3',
-}
+    'default': dj_database_url.parse(
+        'postgresql://neondb_owner:npg_NGZ81zmXtSbk@ep-raspy-feather-a12909q5-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
