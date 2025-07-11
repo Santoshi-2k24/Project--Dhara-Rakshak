@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from registry import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 path('admin/', admin.site.urls),
@@ -27,4 +29,7 @@ path('officer-login/', views.officer_login, name='officer_login'),
 path('officer-dashboard/', views.officer_dashboard, name='officer_dashboard'),
 path('registration-form/', views.registration_form, name='registration_form'),
 path('search-dashboard/', views.search_dashboard, name='search_dashboard'),
-]
+path('off_post/',include('Facial_Recognition.urls'),name='upload'),
+path('login/',include('Officer_Login.urls'),name='login')
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

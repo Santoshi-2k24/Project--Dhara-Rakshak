@@ -29,7 +29,12 @@ INSTALLED_APPS = [
 'django.contrib.sessions',
 'django.contrib.messages',
 'django.contrib.staticfiles',
+'rest_framework',
 'registry',
+'cloudinary',
+'cloudinary_storage',
+'Facial_Recognition',
+'Officer_Login',
 ]
 
 MIDDLEWARE = [
@@ -42,7 +47,24 @@ MIDDLEWARE = [
 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'drlfwutil',
+    'API_KEY': '661759698677516',
+    'API_SECRET': 'dHqSeR0dxh5Oma063sCXdzxcoZY',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+MEDIA_URL = '/media/'
+
 ROOT_URLCONF = 'backend.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',  # Required for API HTML UI
+    ]
+}
 
 TEMPLATES = [
 {
